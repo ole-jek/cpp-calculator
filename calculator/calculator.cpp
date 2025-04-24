@@ -22,64 +22,63 @@ bool RunCalculatorCycle(){
     if (!ReadNumber(number)){
         cerr<<"Error: Numeric operand expected";
         return false;
-    } else {
-        while (operation != "q") {
-            cin>>operation;
-            if (operation == "+"){
-                if (!ReadNumber(new_number)){
-                    cerr<<"Error: Numeric operand expected";
-                    return false;
-                }
-                number += new_number;
-            } else if (operation == "="){
-                cout<<number<<endl;
-            } else if (operation == "-"){
-                if (!ReadNumber(new_number)){
-                    cerr<<"Error: Numeric operand expected";
-                    return false;
-                } 
-                number -= new_number;
-            } else if (operation == "*"){
-                if (!ReadNumber(new_number)){
-                    cerr<<"Error: Numeric operand expected";
-                    return false;
-                } 
-                number *= new_number;
-            } else if (operation == "/"){
-                if (!ReadNumber(new_number)){
-                    cerr<<"Error: Numeric operand expected";
-                    return false;
-                } 
-                number /= new_number;
-            } else if (operation == "**"){
-                if (!ReadNumber(new_number)){
-                    cerr<<"Error: Numeric operand expected";
-                    return false;
-                }
-                number = pow(number, new_number);
-            } else if (operation == "c"){
-                number = 0;
-                count = 0;
-            } else if (operation == ":"){
-                if (!ReadNumber(new_number)){
-                    cerr<<"Error: Numeric operand expected";
-                    return false;
-                }
-                number = new_number;
-            } else if (operation == "s"){
-                memory_num = number;
-                ++count;
-            } else if (operation == "l"){
-                if (count == 0) {
-                    cerr<<"Error: Memory is empty";
-                    return false; 
-                }
-                number = memory_num;
-            } else if (operation != "q") {
-                cerr<<"Error: Unknown token "<<operation;
+    }
+    while (operation != "q") {
+        cin>>operation;
+        if (operation == "+"){
+            if (!ReadNumber(new_number)){
+                cerr<<"Error: Numeric operand expected";
                 return false;
+                }
+            number += new_number;
+        } else if (operation == "="){
+            cout<<number<<endl;
+        } else if (operation == "-"){
+            if (!ReadNumber(new_number)){
+                cerr<<"Error: Numeric operand expected";
+                return false;
+                } 
+            number -= new_number;
+        } else if (operation == "*"){
+            if (!ReadNumber(new_number)){
+                cerr<<"Error: Numeric operand expected";
+                return false;
+                } 
+            number *= new_number;
+        } else if (operation == "/"){
+            if (!ReadNumber(new_number)){
+                cerr<<"Error: Numeric operand expected";
+                return false;
+                } 
+            number /= new_number;
+        } else if (operation == "**"){
+            if (!ReadNumber(new_number)){
+                cerr<<"Error: Numeric operand expected";
+                return false;
+                }
+            number = pow(number, new_number);
+        } else if (operation == "c"){
+            number = 0;
+            count = 0;
+        } else if (operation == ":"){
+            if (!ReadNumber(new_number)){
+                cerr<<"Error: Numeric operand expected";
+                return false;
+                }
+            number = new_number;
+        } else if (operation == "s"){
+            memory_num = number;
+            ++count;
+        } else if (operation == "l"){
+            if (count == 0) {
+                cerr<<"Error: Memory is empty";
+                return false; 
+                }
+            number = memory_num;
+        } else if (operation != "q") {
+            cerr<<"Error: Unknown token "<<operation;
+            return false;
             }
         } 
         return true;
-    }
 }
