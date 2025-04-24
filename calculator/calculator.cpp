@@ -78,7 +78,7 @@ bool RunCalculatorCycle(){
         } else if (operation != "q") {
             cerr<<"Error: Unknown token "<<operation;
             return false;
-            }
-        } 
-        return true;
+        }
+    } 
+    return true;
 }
