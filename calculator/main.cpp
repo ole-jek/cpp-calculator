@@ -1,6 +1,6 @@
-// В этом файле только функция main и #include-директивы.
 #include "calculator.h"
 #include <iostream>
+
 int main() {
     bool calc_success = RunCalculatorCycle();
     if(calc_success){
